@@ -7,7 +7,7 @@ let multer=require('multer'),
     express=require('express')
 
 //const DIR='./uploads/painting/';
-var drive=google.drive({version:'v3',auth:oAuth2Client})
+var drive=google.drive({version:'v3',auth:'oAuth2Client'})
 
 /*const storage=multer.diskStorage({
     destination:(req,file,cb)=>{
