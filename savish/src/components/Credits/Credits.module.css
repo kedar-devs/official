@@ -1,0 +1,93 @@
+.container{
+    margin:2% 5%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:15px;
+    min-height: 500px;
+}
+
+.header{
+    font-size:40px;
+    text-align: center;
+    color: rgb(215, 215, 25);
+    font-family: 'Lobster';
+    font-weight: 400;
+    padding:10px;
+}
+
+
+.card{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border-radius: 15px;
+   
+    box-shadow: 0 7px 10px 0 rgba(0,0,0,0.9);
+}
+
+.left{
+    min-width:100px;
+    background-color: rgb(0,0,0,0.8);
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    padding:15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.right{
+    background-color: rgb(0,0,0,0.6);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding:15px;
+    color:aliceblue;
+    font-family: Roboto;
+}
+
+.title{
+    font-size:20px;
+    font-weight: 600;
+    text-align:center;
+    padding:10px;
+    font-family: Roboto;
+}
+
+.body{
+    font-size:15px;
+    padding:10px;
+    text-align: justify;
+}
+
+.icons{
+    margin:10px 0 0 0;
+}
+
+.icon{
+    margin:0 5px;
+}
+
+.image{
+    width:100px;
+    border-radius: 50%;
+}
+
+@media(max-width:1500px){
+    .container{
+        grid-template-columns: repeat(3,1fr);   
+    }
+}
+
+@media(max-width:1200px){
+    .container{
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+}
+
+@media(max-width:800px){
+    .container{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+

@@ -1,0 +1,31 @@
+/* .back{
+    background-color:rgb(0,0,0,0.7);
+    color:rgb(10, 240, 163);
+    position: center;
+}
+.input{
+    background:transparent;
+    color:whitesmoke;
+
+}
+.img-pos{
+    object-position: right;
+}
+.cont-pos{
+    object-position: left;
+}
+.background1{
+    background-image:url("theme2.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: initial;
+    min-height: 800px;
+    -webkit-background-size: 100%;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    width: auto;
+    position:center;
+    background-color: #464646;
+    background-attachment: fixed;
+    background-position: center center;     
+} */

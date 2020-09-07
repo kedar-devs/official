@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+.loginformpage{
+    min-height: calc(100vh - 265px);
+}
+.loginform{
+    background:rgba(0, 0, 0, 0.6);
+    width: fit-content;
+    color: aliceblue;
+    padding:50px 100px;
+    margin: 50px auto;
+    border-radius: 20px;
+	box-shadow: 0 7px 10px 0 rgba(0,0,0,0.8);
+    position: relative;
+}
+.loginform fieldset{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: fit-content;
+    font-family: "Poppins";
+    border:none;
+}
+.loginform img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+.loginform h1{
+    font-size: 30px;
+    /* text-transform: uppercase;
+    letter-spacing: 2px; */
+}
+.loginform input{
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    margin: 20px 10px;
+    width: 400px;
+    color: aliceblue;
+}
+
+.loginform span{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.loginform span input{
+    width: 190px;
+    margin-bottom: 0px;
+}
+.loginform input::placeholder{
+    color:rgba(255, 255, 255, 0.7);
+}
+.loginform button{
+    display: block;
+    margin: auto;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+}
+.emailhelp{
+    color:rgba(255, 255, 255, 1);
+    margin-top: -12px;    
+    font-family: "Poppins";
+}
+.loginform h2{
+    margin: 20px;
+}
+.loginform p{
+    color:red;
+    font-size: 13px;
+}
+@media(max-width:700px){
+    .loginform{
+        padding:40px 50px;
+        margin: 50px auto;
+    }    
+    .loginform span{
+        grid-template-columns: auto;
+    }
+    .loginform span input{
+        margin: 10px auto;
+    }
+}

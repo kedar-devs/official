@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+/* .navbar{
+    /* background-color: #616161; 
+    background-color: rgba(0, 0, 0, 0.1);
+    /* box-shadow:5px 5px 5px #212121;   
+    position: fixed;
+    padding:10px;
+    width: 100%;
+    font-size:1.5em;
+}
+
+.link{
+    color:#fff!important;
+    margin:10px;
+}
+
+.link:hover{
+    color:#000!important;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+.drop{
+    color:#fff!important;
+    /* color: rebeccapurple; 
+    border-radius:5px;
+    padding:10px;
+    /* background-color: aqua; 
+}
+.drop:hover{
+    /* background-color: #fff;
+    color:#000; 
+    background-color: aqua;
+    /* color: purple; */
+    /*
+}
+
+.brand{
+    color:#fff!important;
+    margin:10px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.brand:hover{
+    color:#000!important;
+} */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.navbar{
+    display: flex;
+    width: 100%;
+    height: 75px; 
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, .3);
+    /* background-color: black; */
+    /* position: fixed; */
+    /* top: 0px; */
+}
+.logo{
+    width: 70px;
+    height: 70px;
+    margin:0px 10px;
+    border-radius: 50%;
+}
+.navlinks{
+    color: aliceblue;
+    justify-self: flex-end;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navlink{
+    list-style: none;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px 30px;
+    font-size: 20px;
+    font-family: 'Poppins', serif;   
+}
+.navlink:hover{
+    padding-bottom: 5px;
+    border-bottom: 1px solid white;
+}
+.link{
+    text-decoration:none;
+    color:aliceblue;
+}
+.hamburgericon{
+    display: none;
+    float: right;
+    vertical-align: middle;
+}
+.linkbtn{
+    background: transparent;
+    color: aliceblue;
+    border: none;
+    font-size: 20px;
+    font-family: 'Poppins', serif;   
+}
+.closebtn{
+    z-index: 200;
+    position: absolute;
+    top:0px;
+    right: 275px;
+    animation: moveinleft 1.5s linear forwards;
+    display: none;
+}
+@media(max-width:700px)
+{
+    .navbar{
+        padding: 10px;
+        /* flex-direction: column; */
+    }
+    .leftnav{
+        width: 100%;
+    }
+    .navlinks{
+        /* padding-top: 100px; */
+        justify-content: space-around;
+        flex-direction: column;
+        /* margin-top: 30px; */
+        /* padding-bottom: 0px; */
+        width: 300px;
+        display: none;
+        justify-self: start;
+        background-color: black;
+        height: 100vh;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 2;
+        animation: moveinleft 1.5s linear forwards;
+        /* vertical-align: */
+    }
+    @keyframes moveinleft{
+        from{
+            transform: translateX(300px);
+        }
+        to{
+            transform: translateX(0px);
+        }
+    }
+    .moveright{
+        animation: moveinright 1s linear forwards;
+    }
+    @keyframes moveinright{
+        from{
+            transform: translateX(0px);
+        }
+        to{
+            transform: translateX(300px);
+            /* display: none; */
+        }
+    }
+    .navlink{
+        /* position: absolute; */
+        display: block;
+        margin: 20px;
+        text-align: center;
+        z-index: 200;
+        /* background-color: aqua; */
+        /* justify-self: flex-end; */
+        /* float: right; */
+    }
+    .hamburgericon{
+        display: inline;
+    }
+}

@@ -1,0 +1,115 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+/* .background{
+  background-image:linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,.5)),url("css/PIXNIO-291615-4377x3283.jpg") ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  -webkit-background-size: 100%;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  width: auto;
+  position:center;
+   background-color: #464646; 
+  background-attachment: fixed;
+  background-position: center center;      */
+
+*{
+	box-sizing: border-box;
+}
+
+.thumbnailslider{
+	width: 100%;
+	float: left;
+	overflow: hidden;
+}
+
+.thumbnailslider .thumbnailcontainer{
+	width: 100%;
+	float: left;
+	transition: margin 1s ease;
+}
+.thumbnailcontainer{
+	width: 200px;
+}
+.thumbnailslider .item{
+	width: 200px;
+  height: 250px;
+  background-color: grey;
+  line-height: 250px;
+  text-align: center;
+  font-size: 50px;
+  color:#ffffff;
+  float: left;
+}
+
+.thumbnailslider .controls{
+	width: 100%;
+	float: left;
+	padding:15px;
+}
+
+.thumbnailslider .controls ul{
+	display: block;
+	text-align: center;
+	padding:0;
+	margin:0;
+	list-style: none;
+}
+.thumbnailslider .controls ul li{
+	height: 15px;
+	width: 15px;
+	border:1px solid #c3c3c3;
+	margin:4px;
+	display: inline-block;
+	line-height: 33px;
+	cursor: pointer;
+	border-radius: 50%;
+}
+.thumbnailslider .controls ul li.active{
+	background-color: yellow;
+	color:#ffffff;
+}
+
+
