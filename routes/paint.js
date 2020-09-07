@@ -30,7 +30,7 @@ var drive=google.drive({version:'v3',auth:''})
         }
     }
 });*/
-var upload=cloud({
+var upload=multer({
     storage:GoogleDriveStorage({
         drive:drive,
         parents:'id-parents',
