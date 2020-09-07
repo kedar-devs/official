@@ -1,12 +1,15 @@
 const router=require('express').Router();
+var {google}=require("googleapis");
+var GoogleDriveStorage =require('multer-google-drive');
 let Paints=require('../models/paint.model');
 let multer=require('multer'),
     uuidv4=require('uuidv4'),
     express=require('express')
 
-const DIR='./uploads/painting/';
+//const DIR='./uploads/painting/';
+var drive=google.drive({version:'v3',auth:''})
 
-const storage=multer.diskStorage({
+/*const storage=multer.diskStorage({
     destination:(req,file,cb)=>{
         cb(null,DIR);
     },
@@ -14,8 +17,9 @@ const storage=multer.diskStorage({
         const filename=file.originalname.toLowerCase().split(' ').join('-');
         cb(null,uuidv4+'-'+filename)
     }
-})
-var upload = multer({
+})*/
+
+/*var upload = multer({
     storage: storage,
     fileFilter: (req, file, cb) => {
         if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
@@ -25,13 +29,33 @@ var upload = multer({
             return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
         }
     }
-});
+});*/
+var upload=cloud({
+    storage:GoogleDriveStorage({
+        drive:drive,
+        parents:'id-parents',
+        filename:(req,file,cb)=>{
+            let filename=file.originalname.toLowerCase().split(' ').join('-');
+            cd(null,uuidv4+'-'+filename);
+        }
+    }),
+    fileFilter: (req, file, cb) => {
+        if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
+            cb(null, true);
+        } else {
+            cb(null, false);
+            return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
+        }
+    }
+})
 
 router.post('/add',upload.single('content'),(req,res)=>{
     console.log(req.body)
     const url=req.protocol+'://'+req.get('host')
     const title=req.body.title
-    const content=url+'/uploads/painting/'+req.file.filename
+    //const content=url+'/uploads/painting/'+req.file.filename
+    const content=url+res.file.filename
+    res.send(res.file.filename)
     const painter=req.body.painter
     const date=Date(req.body.date)
 
