@@ -12,7 +12,7 @@ cloudinary.config({
 //const DIR='./uploads/painting/';
 
 
-/*const storage=multer.diskStorage({
+const storage=multer.diskStorage({
     destination:(req,file,cb)=>{
         cb(null,DIR);
     },
@@ -20,9 +20,9 @@ cloudinary.config({
         const filename=file.originalname.toLowerCase().split(' ').join('-');
         cb(null,uuidv4+'-'+filename)
     }
-})*/
+})
 
-/*var upload = multer({
+var upload = multer({
     storage: storage,
     fileFilter: (req, file, cb) => {
         if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
@@ -32,7 +32,7 @@ cloudinary.config({
             return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
         }
     }
-});*/
+});
 /*var upload=multer({
     storage:GoogleDriveStorage({
         drive:drive,
@@ -52,11 +52,11 @@ cloudinary.config({
     }
 })*/
 
-router.post('/add',(req,res)=>{
+router.post('/add',upload.single('content'),(req,res)=>{
     const url=req.protocol+'://'+req.get('host')
     const title=req.body.title
     //const content=url+'/uploads/painting/'+req.file.filename
-    var content=req.body.content
+    var content=url+'/uploads/painting/'+req.file.filename
     //res.send(res.file.filename)
     const painter=req.body.painter
     const date=Date(req.body.date)
@@ -115,7 +115,7 @@ router.route('/:id').get((req,res)=>{
     .then(paint=>res.json(paint))
     .catch(err=>res.status(400).json('Error:'+err))
 })
-router.post('/adduser',(req,res)=>{
+router.post('/adduser',uplod.single('content'),(req,res)=>{
     console.log(req.body)
     
     const title=req.body.title
