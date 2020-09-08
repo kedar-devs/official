@@ -24,7 +24,7 @@ export default function Display({posts}) {
                         <button onClick={() =>setOpen(false)}>X</button>
                     </div>
                     <FileViewer
-                    fileType={'docx'||'txt'||'png'||'jpeg'||'jpg'}
+                    fileType={'docx'}
                     filePath={info.content}
                     className="img-fluid"
                     /> 
