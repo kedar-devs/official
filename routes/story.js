@@ -40,8 +40,7 @@ router.post('/add',upload.single('content'),(req,res)=>{
     const newUser=new Storys({title,content,Author,about,date})
 
     cloudinary.uploader.upload(newUser.content,{ public_id: newUser.content,
-        resource_type: "raw",
-        raw_convert: "aspose" },(err,result)=>{
+        resource_type: "raw" },(err,result)=>{
         if(err){
 
             res.status(500).json(err)

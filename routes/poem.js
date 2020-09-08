@@ -51,7 +51,7 @@ router.post('/add',upload.single('content'),(req,res)=>{
     const date=Date(req.body.date)
     
     const newUser=new Poems({title,content,poet,date,about})
-    cloudinary.uploader.upload(newUser.content,(err,result)=>{
+    cloudinary.uploader.upload(newUser.content,{resource_type:"raw"},(err,result)=>{
         if(err){
 
             res.status(500).json(err)
