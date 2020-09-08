@@ -1,13 +1,16 @@
 const router=require('express').Router();
-var {google}=require("googleapis");
-var GoogleDriveStorage =require('multer-google-drive');
+const cloudinary=require('cloudinary').v2;
 let Paints=require('../models/paint.model');
 let multer=require('multer'),
     uuidv4=require('uuidv4'),
     express=require('express')
-
+cloudinary.config({
+    cloud_name:'savishkar',
+    api_key:'485787349522969',
+    api_secret:'zOTZ3DN66ch5LSY7cqcjf5yVu3E'
+})
 //const DIR='./uploads/painting/';
-var drive=google.drive({version:'v3',auth:'oAuth2Client'})
+
 
 /*const storage=multer.diskStorage({
     destination:(req,file,cb)=>{
@@ -30,7 +33,7 @@ var drive=google.drive({version:'v3',auth:'oAuth2Client'})
         }
     }
 });*/
-var upload=multer({
+/*var upload=multer({
     storage:GoogleDriveStorage({
         drive:drive,
         parents:'id-parents',
@@ -47,21 +50,44 @@ var upload=multer({
             return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
         }
     }
-})
+})*/
 
-router.post('/add',upload.single('content'),(req,res)=>{
-    console.log(req.body)
+router.post('/add',(req,res)=>{
     const url=req.protocol+'://'+req.get('host')
     const title=req.body.title
     //const content=url+'/uploads/painting/'+req.file.filename
-    const content=url+res.file.filename
-    res.send(res.file.filename)
+    var content=req.body.content
+    //res.send(res.file.filename)
     const painter=req.body.painter
     const date=Date(req.body.date)
 
     const newUser=new Paints({title,content,painter,date})
+    cloudinary.uploader.upload(newUser.content,(err,result)=>{
+        if(err){
 
-    newUser.save()
+            res.status(500).json(err)
+        }
+        else{
+            newUser.content=result.url
+            newUser.save()
+            .then(result => {
+                res.status(201).json({
+                message: "User registered successfully!",
+                userCreated: {
+                    title:result.title,
+                    content:result.content
+                }
+            })
+        })
+        .catch(err => {
+            console.log(err),
+                res.status(500).json({
+                    error: err
+                });
+        })
+        }
+    })
+    /*newUser.save()
     .then(result => {
         res.status(201).json({
             message: "User registered successfully!",
@@ -76,7 +102,7 @@ router.post('/add',upload.single('content'),(req,res)=>{
             res.status(500).json({
                 error: err
             });
-    })
+    })*/
 
 })
 router.route('/').get(async(req,res)=>{
@@ -122,7 +148,7 @@ router.route('/:id').delete((req,res)=>{
     .then(()=>res.json('PAINTING DELETED'))
     .catch(err => res.status(400).json('Error:'+err))
 })
-router.post('/update/:id',upload.single('content'),(req,res)=>{
+router.post('/update/:id',(req,res)=>{
     Paints.findById(req.params.id)
     const url=req.protocol+'://'+req.get('host')
     .then(paint=>{
