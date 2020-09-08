@@ -115,7 +115,7 @@ router.route('/:id').get((req,res)=>{
     .then(paint=>res.json(paint))
     .catch(err=>res.status(400).json('Error:'+err))
 })
-router.post('/adduser',upload.single('content'),(req,res)=>{
+router.post('/adduser',(req,res)=>{
     console.log(req.body)
     
     const title=req.body.title

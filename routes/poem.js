@@ -1,5 +1,11 @@
 const router=require('express').Router();
 let Poems=require('../models/poem.model');
+var cloudinary=require('cloudinary').v2
+cloudinary.config({
+    cloud_name:'savishkar',
+    api_key:'485787349522969',
+    api_secret:'zOTZ3DN66ch5LSY7cqcjf5yVu3E'
+})
 let multer=require('multer'),
     uuidv4=require('uuidv4'),
     express=require('express')
@@ -45,10 +51,31 @@ router.post('/add',upload.single('content'),(req,res)=>{
     const date=Date(req.body.date)
     
     const newUser=new Poems({title,content,poet,date,about})
+    cloudinary.uploader.upload(newUser.content,(err,result)=>{
+        if(err){
 
-    newUser.save()
-    .then(()=>res.json('added successfully'))
-    .catch(err=> res.status(400).json('Error:'+err))
+            res.status(500).json(err)
+        }
+        else{
+            newUser.content=result.url
+            newUser.save()
+            .then(result => {
+                res.status(201).json({
+                message: "User registered successfully!",
+                userCreated: {
+                    title:result.title,
+                    content:result.content
+                }
+            })
+        })
+        .catch(err => {
+            console.log(err),
+                res.status(500).json({
+                    error: err
+                });
+        })
+        }
+    })
 
 })
 router.post('/adduser',(req,res)=>{

@@ -3,6 +3,12 @@ let User=require('../models/user.model');
 const jwt=require('jsonwebtoken');
 const bcrypt=require('bcryptjs');
 const saltRound=8;
+var cloudinary=require('cloudinary').v2
+cloudinary.config({
+    cloud_name:'savishkar',
+    api_key:'485787349522969',
+    api_secret:'zOTZ3DN66ch5LSY7cqcjf5yVu3E'
+})
 let multer=require('multer'),
     uuidv4=require('uuidv4'),
     express=require('express');
@@ -115,9 +121,32 @@ router.post('/addcontent/:id',upload.single('content'),(req,res)=>{
         user.title=req.body.title
         user.discription=req.body.discription
         user.type=req.body.type
-        user.save()
-        .then(result=>res.status(200).json('Success'))
-        .catch(err=>res.status(400).json('Error inside post:'+err))
+
+        cloudinary.uploader.upload(user.content,(err,result)=>{
+            if(err){
+    
+                res.status(500).json(err)
+            }
+            else{
+                user.content=result.url
+                user.save()
+                .then(result => {
+                    res.status(201).json({
+                    message: "User registered successfully!",
+                    userCreated: {
+                        title:result.title,
+                        content:result.content
+                    }
+                })
+            })
+            .catch(err => {
+                console.log(err),
+                    res.status(500).json({
+                        error: err
+                    });
+            })
+            }
+        })
     })
     .catch(err=>res.status(400).json('Error outside post:'+err))
 })

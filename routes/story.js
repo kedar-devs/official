@@ -3,7 +3,12 @@ let Storys=require('../models/story.model');
 let multer=require('multer'),
     uuidv4=require('uuidv4'),
     express=require('express')
-
+var cloudinary=require('cloudinary').v2
+cloudinary.config({
+    cloud_name:'savishkar',
+    api_key:'485787349522969',
+    api_secret:'zOTZ3DN66ch5LSY7cqcjf5yVu3E'
+})
 const DIR='./uploads/stories/';
 
 const storage=multer.diskStorage({
@@ -34,21 +39,30 @@ router.post('/add',upload.single('content'),(req,res)=>{
 
     const newUser=new Storys({title,content,Author,about,date})
 
-    newUser.save()
-    .then(result => {
-        res.status(201).json({
-            message: "User registered successfully!",
-            userCreated: {
-                title:result.title,
-                content:result.content
-            }
+    cloudinary.uploader.upload(newUser.content,(err,result)=>{
+        if(err){
+
+            res.status(500).json(err)
+        }
+        else{
+            newUser.content=result.url
+            newUser.save()
+            .then(result => {
+                res.status(201).json({
+                message: "User registered successfully!",
+                userCreated: {
+                    title:result.title,
+                    content:result.content
+                }
+            })
         })
-    })
-    .catch(err => {
-        console.log(err),
-            res.status(500).json({
-                error: err
-            });
+        .catch(err => {
+            console.log(err),
+                res.status(500).json({
+                    error: err
+                });
+        })
+        }
     })
 
 })
