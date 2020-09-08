@@ -9,7 +9,7 @@ cloudinary.config({
     api_key:'485787349522969',
     api_secret:'zOTZ3DN66ch5LSY7cqcjf5yVu3E'
 })
-//const DIR='./uploads/painting/';
+const DIR='./uploads/painting/';
 
 
 const storage=multer.diskStorage({
