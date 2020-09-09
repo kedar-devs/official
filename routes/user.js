@@ -122,7 +122,7 @@ router.post('/addcontent/:id',upload.single('content'),(req,res)=>{
         user.discription=req.body.discription
         user.type=req.body.type
 
-        cloudinary.uploader.upload(user.content,{resource_type: "raw"},(err,result)=>{
+        cloudinary.uploader.upload(user.content,{resource_type: "auto"},(err,result)=>{
             if(err){
     
                 res.status(500).json(err)
