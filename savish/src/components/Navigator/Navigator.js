@@ -25,15 +25,12 @@ function Navigator() {
   let closedbtn=null
   let Exist=false
   const responsiveNavbarOpen=()=>{
-    resnavrref.classList.remove("moveright")
-    closedbtn.classList.remove("moveright")
-    // closedbtn.classList.add("Navigator_leftnav__mSB-h")
     resnavrref.style.display="flex"
     closedbtn.style.display="block"
   }
   const responsiveNavbarClose=()=>{
-    resnavrref.classList.add("moveright")
-    closedbtn.classList.add("moveright")
+    resnavrref.style.display="none"
+    closedbtn.style.display="none"
   }
     if(localStorage.getItem('token')){
       Exist=true
