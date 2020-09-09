@@ -9,7 +9,7 @@ function Navigator() {
   const DeleteUser=()=>{
     let id=localStorage.getItem('token2')
     localStorage.clear()
-    axios.delete("http://localhost:3000/user/delete/"+id)
+    axios.delete("/user/delete/"+id)
     .then(res=>{
       console.log("User deleted");
       window.location.reload(true);
