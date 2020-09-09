@@ -275,3 +275,15 @@ body{
   .heading:after {
 	margin-left: 10px
   }
+  .moveright{
+    animation: moveinright 1s linear forwards;
+}
+  @keyframes moveinright{
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateX(300px);
+        /* display: none; */
+    }
+}
