@@ -25,12 +25,15 @@ function Navigator() {
   let closedbtn=null
   let Exist=false
   const responsiveNavbarOpen=()=>{
+    resnavrref.classList.remove("moveright")
+    closedbtn.classList.remove("moveright")
+    // closedbtn.classList.add("Navigator_leftnav__mSB-h")
     resnavrref.style.display="flex"
     closedbtn.style.display="block"
   }
   const responsiveNavbarClose=()=>{
-    resnavrref.style.display="none"
-    closedbtn.style.display="none"
+    resnavrref.classList.add("moveright")
+    closedbtn.classList.add("moveright")
   }
     if(localStorage.getItem('token')){
       Exist=true
@@ -68,9 +71,7 @@ function Navigator() {
               <img src={logo} alt="savishlogo" title="Saviskar Logo" className={styles.logo}/>
               </div>
               <img src={closebtn} className={styles.closebtn} ref={e=>closedbtn=e} onClick={responsiveNavbarClose} alt="close btn"/>
-                <ul className={styles.navlinks} ref={(e)=>{resnavrref=e}} data-aos="fade-left" data-aos-delay="100"
-    data-aos-duration="3000"
-    data-aos-easing="ease-in-out">
+                <ul className={styles.navlinks} ref={(e)=>{resnavrref=e}} >
                 <Link to="/" className={styles.link}><li className={styles.navlink}>Home</li></Link>
                   <Link to="/credits" className={styles.link}><li className={styles.navlink}>Credits</li></Link>
                   {Exist?
