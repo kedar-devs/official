@@ -25,15 +25,12 @@ function Navigator() {
   let closedbtn=null
   let Exist=false
   const responsiveNavbarOpen=()=>{
-    resnavrref.classList.remove("Navigator_moveright__1lI1W")
-    closedbtn.classList.remove("Navigator_moveright__1lI1W")
-    // closedbtn.classList.add("Navigator_leftnav__mSB-h")
     resnavrref.style.display="flex"
     closedbtn.style.display="block"
   }
   const responsiveNavbarClose=()=>{
-    resnavrref.classList.add("Navigator_moveright__1lI1W")
-    closedbtn.classList.add("Navigator_moveright__1lI1W")
+    resnavrref.style.display="none"
+    closedbtn.style.display="none"
   }
     if(localStorage.getItem('token')){
       Exist=true
