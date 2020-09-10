@@ -111,18 +111,6 @@
     animation: moveinleft 1.5s linear forwards;
     display: none;
 }
-.moveright{
-    animation: moveinright 1s linear forwards;
-}
-@keyframes moveinright{
-    from{
-        transform: translateX(0px);
-    }
-    to{
-        transform: translateX(300px);
-        /* display: none; */
-    }
-}
 @media(max-width:700px)
 {
     .navbar{
@@ -158,7 +146,18 @@
             transform: translateX(0px);
         }
     }
-    
+    .moveright{
+        animation: moveinright 1s linear forwards;
+    }
+    @keyframes moveinright{
+        from{
+            transform: translateX(0px);
+        }
+        to{
+            transform: translateX(300px);
+            /* display: none; */
+        }
+    }
     .navlink{
         /* position: absolute; */
         display: block;
