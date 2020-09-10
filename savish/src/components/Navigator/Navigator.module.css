@@ -136,6 +136,7 @@
         top: 0;
         z-index: 2;
         animation: moveinleft 1.5s linear forwards;
+        animation: moveinright 1s linear forwards;
         /* vertical-align: */
     }
     @keyframes moveinleft{
