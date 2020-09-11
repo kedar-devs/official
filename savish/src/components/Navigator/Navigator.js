@@ -9,7 +9,7 @@ function Navigator() {
   const DeleteUser=()=>{
     let id=localStorage.getItem('token2')
     localStorage.clear()
-    axios.delete("/user/delete/"+id)
+    axios.delete("http://localhost:3000/user/delete/"+id)
     .then(res=>{
       console.log("User deleted");
       window.location.reload(true);
@@ -25,12 +25,18 @@ function Navigator() {
   let closedbtn=null
   let Exist=false
   const responsiveNavbarOpen=()=>{
+    // Navigator_leftnav__mSB-h
+    resnavrref.classList.remove("Navigator_moveright__1lI1W")
+    resnavrref.classList.add("Navigator_moveleft__AdLjw")
+    closedbtn.classList.remove("Navigator_moveright__1lI1W")
+    closedbtn.classList.add("Navigator_moveleft__AdLjw")
+    // closedbtn.classList.add("Navigator_leftnav__mSB-h")
     resnavrref.style.display="flex"
     closedbtn.style.display="block"
   }
   const responsiveNavbarClose=()=>{
-    resnavrref.style.display="none"
-    closedbtn.style.display="none"
+    resnavrref.classList.add("Navigator_moveright__1lI1W")
+    closedbtn.classList.add("Navigator_moveright__1lI1W")
   }
     if(localStorage.getItem('token')){
       Exist=true
@@ -68,22 +74,23 @@ function Navigator() {
               <img src={logo} alt="savishlogo" title="Saviskar Logo" className={styles.logo}/>
               </div>
               <img src={closebtn} className={styles.closebtn} ref={e=>closedbtn=e} onClick={responsiveNavbarClose} alt="close btn"/>
-                <ul className={styles.navlinks} ref={(e)=>{resnavrref=e}} data-aos="fade-left" data-aos-delay="100"
+                {/* <ul className={styles.navlinks} ref={(e)=>{resnavrref=e}} data-aos="fade-left" data-aos-delay="100"
     data-aos-duration="3000"
-    data-aos-easing="ease-in-out">
+    data-aos-easing="ease-in-out"> */}
+                <ul className={styles.navlinks} ref={(e)=>{resnavrref=e}} >
                 <Link to="/" className={styles.link}><li className={styles.navlink}>Home</li></Link>
                   <Link to="/credits" className={styles.link}><li className={styles.navlink}>Credits</li></Link>
                   {Exist?
-                  <div>
+                  <>
                   <li className={styles.navlink}>
                     <button className={styles.linkbtn}  onClick={()=>DeleteUser()}>Sign out</button>
                   </li>  
                   <li className={styles.navlink}>
                     <button className={styles.linkbtn}  onClick={()=>RemoveToken()}>Log out</button>
                   </li>
-                  </div>
-                  : <div><Link to="/signin" className={styles.link}><li className={styles.navlink}>Sign In</li></Link>
-                  <Link to="/loginuser" className={styles.link}><li className={styles.navlink}>Log In</li></Link></div>}
+                  </>
+                  : <><Link to="/signin" className={styles.link}><li className={styles.navlink}>Sign In</li></Link>
+                  <Link to="/loginuser" className={styles.link}><li className={styles.navlink}>Log In</li></Link></>}
               </ul>
                 <img src={hamburgericon} alt="hamburger icon" className={styles.hamburgericon} onClick={responsiveNavbarOpen} data-aos="fade-left" data-aos-delay="100"
     data-aos-duration="3000"

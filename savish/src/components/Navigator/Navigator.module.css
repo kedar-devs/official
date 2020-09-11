@@ -107,9 +107,11 @@
     z-index: 200;
     position: absolute;
     top:0px;
-    right: 275px;
+    right: 280px;
     animation: moveinleft 1.5s linear forwards;
     display: none;
+    /* width: 100px; */
+    height: 20px;
 }
 @media(max-width:700px)
 {
@@ -135,11 +137,11 @@
         right: 0;
         top: 0;
         z-index: 2;
-        animation: moveinleft 1.5s linear forwards;
-        /*animation: moveinright 1s linear forwards;*/
         /* vertical-align: */
     }
-    
+    .moveleft{
+        animation: moveinleft 1.5s linear forwards;
+    }
     @keyframes moveinleft{
         from{
             transform: translateX(300px);
