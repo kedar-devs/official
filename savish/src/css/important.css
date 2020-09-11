@@ -287,3 +287,14 @@ body{
         /* display: none; */
     }
 }
+.moveleft{
+    animation: moveinleft 1.5s linear forwards;
+}
+@keyframes moveinleft{
+    from{
+        transform: translateX(300px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+}
