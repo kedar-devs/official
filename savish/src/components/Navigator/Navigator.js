@@ -27,9 +27,9 @@ function Navigator() {
   const responsiveNavbarOpen=()=>{
     // Navigator_leftnav__mSB-h
     resnavrref.classList.remove("Navigator_moveright__1lI1W")
-    resnavrref.classList.add("Navigator_moveleft__AdLjw")
+    resnavrref.classList.add("Navigator_moveleft__AdLjw Navigator_navlinks__2Iguv")
     closedbtn.classList.remove("Navigator_moveright__1lI1W")
-    closedbtn.classList.add("Navigator_moveleft__AdLjw")
+    closedbtn.classList.add("Navigator_moveleft__AdLjw Navigator_navlinks__2Iguv")
     // closedbtn.classList.add("Navigator_leftnav__mSB-h")
     resnavrref.style.display="flex"
     closedbtn.style.display="block"
@@ -37,8 +37,8 @@ function Navigator() {
   const responsiveNavbarClose=()=>{
     resnavrref.classList.add("Navigator_moveright__1lI1W")
     closedbtn.classList.add("Navigator_moveright__1lI1W")
-    closedbtn.classList.remove("Navigator_moveleft__AdLjw")
-    resnavrref.classList.remove("Navigator_moveleft__AdLjw")
+    closedbtn.classList.remove("Navigator_moveleft__AdLjw Navigator_navlinks__2Iguv")
+    resnavrref.classList.remove("Navigator_moveleft__AdLjw Navigator_navlinks__2Iguv")
   }
     if(localStorage.getItem('token')){
       Exist=true
