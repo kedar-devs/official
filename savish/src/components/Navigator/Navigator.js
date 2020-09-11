@@ -26,19 +26,19 @@ function Navigator() {
   let Exist=false
   const responsiveNavbarOpen=()=>{
     // Navigator_leftnav__mSB-h
-    resnavrref.classList.remove("Navigator_moveright__1lI1W")
-    resnavrref.classList.add("Navigator_moveleft__AdLjw")
-    closedbtn.classList.remove("Navigator_moveright__1lI1W")
-    closedbtn.classList.add("Navigator_moveleft__AdLjw")
+    resnavrref.classList.remove("moveright")
+    resnavrref.classList.add("moveleft")
+    closedbtn.classList.remove("moveright")
+    closedbtn.classList.add("moveleft")
     // closedbtn.classList.add("Navigator_leftnav__mSB-h")
     resnavrref.style.display="flex"
     closedbtn.style.display="block"
   }
   const responsiveNavbarClose=()=>{
-    resnavrref.classList.remove("Navigator_moveleft__AdLjw")
-    closedbtn.classList.remove("Navigator_moveleft__AdLjw")
-    resnavrref.classList.add("Navigator_moveright__1lI1W")
-    closedbtn.classList.add("Navigator_moveright__1lI1W")
+    resnavrref.classList.remove("moveleft")
+    closedbtn.classList.remove("moveleft")
+    resnavrref.classList.add("moveright")
+    closedbtn.classList.add("moveright")
   }
     if(localStorage.getItem('token')){
       Exist=true
