@@ -35,9 +35,10 @@ function Navigator() {
     closedbtn.style.display="block"
   }
   const responsiveNavbarClose=()=>{
+    resnavrref.classList.remove("Navigator_moveleft__AdLjw")
+    closedbtn.classList.remove("Navigator_moveleft__AdLjw")
     resnavrref.classList.add("Navigator_moveright__1lI1W")
     closedbtn.classList.add("Navigator_moveright__1lI1W")
-    
   }
     if(localStorage.getItem('token')){
       Exist=true
