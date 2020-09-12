@@ -35,6 +35,8 @@ function Navigator() {
     closedbtn.style.display="block"
   }
   const responsiveNavbarClose=()=>{
+    resnavrref.style.display="none"
+    closedbtn.style.display="none"
     resnavrref.classList.remove("moveleft")
     closedbtn.classList.remove("moveleft")
     resnavrref.classList.add("moveright")
