@@ -283,7 +283,7 @@ body{
         transform: translateX(0px);
     }
     to{
-        transform: translateX(300px);
+        transform: translateX(150px);
         /* display: none; */
     }
 }
