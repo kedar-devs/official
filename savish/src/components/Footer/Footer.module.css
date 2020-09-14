@@ -7,12 +7,15 @@
 }
 .footer{
     background-color: rgba(0, 0, 0, .8);
+    height: 140px;
+    color: white;    
+    padding-top: 2%;
+}
+.footer section{
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    color: white;
-    padding: 2% 0;
-    height: 150px;
 }
 .sitemap{
     /* width: 30%; */
@@ -32,18 +35,38 @@
     padding: 5% 0;
 }
 .socialmedias{
-    width: 20%;
+    width: 30%;
 }
 .socialmedias img{
     padding: 2%;
 }
 .companyname{
-    width: 30%;
-    font-size: 30px;
+    width: 40%;
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* margin: auto; */
+}
+.companyname p{
+    font-weight: 900;
+    font-size: 23px;
     font-family: 'Lemonada', cursive;
+    padding: 20px;
+
+}
+.companyname img{
+    width: 100px;
+    height: 100%;
+    /* margin: auto; */
+    border-radius: 50%;
 }
 .footer span{
     font-weight: 900;
+}
+.developercredit{
+    width:100%;
+    text-align:center;
 }
 @media(max-width:900px)
 {
@@ -54,24 +77,31 @@
 @media(max-width:700px)
 {
     .footer{
-        flex-wrap: wrap;
-        padding: 2% 4%;
         height: auto;
     }
-    .explore,.location{
-        width: 50%;
-        padding: 2%;
+    .footer section{
+        flex-wrap: wrap;
+        padding: 20px;
+        justify-content: space-around;
+    }
+    .explore{
+        width: 200px;
+        padding-top: 20px;
         justify-self: flex-end;
     }
     .location{
         text-align: center;
     }
+    .socialmedias{
+        width: 50%;
+        width: 140px;
+    }
     .companyname{
-        text-align: center;
+        justify-content: center;
         width: 100%;
     }   
 }
-@media(max-width:460px)
+/* @media(max-width:460px)
 {
     *{
         font-size: 8px;
@@ -79,4 +109,4 @@
     .explore,.location{
         margin-bottom: 2%;
     }
-}
+} */

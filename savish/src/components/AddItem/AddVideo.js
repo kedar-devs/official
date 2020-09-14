@@ -47,6 +47,7 @@ class AddVideo extends Component {
     window.location = '/things'
   }
   render() {
+    if(localStorage.getItem("admin")){
     return (
       <div className={styles.addpage} data-aos="fade-down">
       <img src={logo} alt="savishkar logo" />
@@ -63,6 +64,13 @@ class AddVideo extends Component {
     </div>
 
     )
+    }
+    else{
+      const {history}=this.props
+      history.push("admin")
+      return(<div></div>)
+      
+    }
   }
 }
 

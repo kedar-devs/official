@@ -1,15 +1,16 @@
 import React from 'react'
-import gmail from "../../icons/gmail.svg"
+import linkedin from "../../icons/linkedinfooter.svg"
 import instagram from "../../icons/instagram.svg"
 import twitter from "../../icons/twitter.svg"
-import whatsapp from "../../icons/whatsapp.svg"
+import youtube from "../../icons/youtube.svg"
 import styles from "./Footer.module.css"
 import classnames from 'classnames';
-
+import geclogo from "../../photos/GECLogo.png"
 function Footer() {
     return (
         <footer className={styles.footer}>
-        <div className={styles.companyname} data-aos="fade-left" data-aos-offset="-200">Savishkar</div>
+            <section>
+        <div className={styles.companyname} data-aos="fade-left" data-aos-offset="-200"><img src={geclogo} alt="Goa College of Engineering Logo"/><p>Savishkaar</p></div>
         <div className={styles.explore} >
             <span data-aos="fade-left" data-aos-offset="-200">Explore</span>
             <div className={styles.sitemap} data-aos="fade-left" data-aos-offset="-200">
@@ -26,11 +27,13 @@ function Footer() {
             </div>
         </div>
         <div className={styles.socialmedias} data-aos="fade-left" data-aos-offset="-200">
-            <img src={gmail} alt="gmail icon" />
+            <img src={linkedin} alt="LinkedIn icon" />
             <img src={twitter} alt="twitter icon" />
             <img src={instagram} alt="instagram icon" />
-            <img src={whatsapp} alt="whatsapp icon" />
+            <img src={youtube} alt="Youtube icon" />
         </div>
+        </section>
+        <p className={styles.developercredit}>&#169; A site by Kedar Devasthali and team</p>
     </footer>
     )
 }

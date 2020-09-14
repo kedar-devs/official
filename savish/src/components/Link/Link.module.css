@@ -13,7 +13,16 @@
     text-decoration: none;
     padding:50px;
     background: rgba(0,0,0,0.4);
-    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.linkcomponent span{
+    font-size: 25px;
+    padding-left: 20px;
+}
+.linkcomponent a{
+    text-decoration: none;
 }
 @media(max-width:700px){
     .linkcomponent{

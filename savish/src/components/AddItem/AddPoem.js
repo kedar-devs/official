@@ -182,6 +182,7 @@ class AddPoem extends Component {
     // window.location = '/addpoem'
   }
   render() {
+    if(localStorage.getItem("admin")){
     return (
       <div className={styles.addpage} data-aos="fade-down">
         <img src={logo} alt="savishkar logo" />
@@ -198,6 +199,13 @@ class AddPoem extends Component {
                </form>            
       </div>
     )
+    }
+    else{
+      const {history}=this.props
+      history.push("admin")
+      return(<div></div>)
+      
+    }
   }
 }
 

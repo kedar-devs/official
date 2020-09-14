@@ -100,6 +100,7 @@ const onAdd=(props)=>{
     .catch(err=>console.log(err))
     
 }
+window.location.reload(true);
 }
 const ondelete=(props)=>{
     axios.post('/user/removecontent/'+props.user._id,props.user)
@@ -108,7 +109,7 @@ const ondelete=(props)=>{
         this.props.history.push("things")
       })
     .catch(err=>console.log(err))
-    
+    window.location.reload(true);
 }
 const User=props=>{
     if(props.user.type==='poem'){

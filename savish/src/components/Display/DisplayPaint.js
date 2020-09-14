@@ -27,7 +27,7 @@ class DisplayPaint extends Component {
         });
         console.log(response.data);
       })
-      .catch((err) => console.log("khada haii khada hai khada haii"));
+      .catch((err) => console.log(err));
   }
 
   paintlist() {

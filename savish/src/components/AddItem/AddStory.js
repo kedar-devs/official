@@ -56,6 +56,7 @@ class AddStory extends Component {
     window.location = '/'
   }
   render() {
+    if(localStorage.getItem("admin")){
     return (
     <div className={styles.addpage} data-aos="fade-down">
       <img src={logo} alt="savishkar logo" />
@@ -72,6 +73,13 @@ class AddStory extends Component {
            </form>            
     </div>
     )
+    }
+    else{
+      const {history}=this.props
+      history.push("admin")
+      return(<div></div>)
+      
+    }
   }
 }
 
