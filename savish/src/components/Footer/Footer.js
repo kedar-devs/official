@@ -27,10 +27,10 @@ function Footer() {
             </div>
         </div>
         <div className={styles.socialmedias} data-aos="fade-left" data-aos-offset="-200">
-            <img src={linkedin} alt="LinkedIn icon" />
-            <img src={twitter} alt="twitter icon" />
-            <img src={instagram} alt="instagram icon" />
-            <img src={youtube} alt="Youtube icon" />
+            <a href="https://www.linkedin.com/company/savishkaar" target="_BLANK"><img src={linkedin} alt="LinkedIn icon" /></a>
+            <a href="https://twitter.com/savishkaar?s=08" target="_BLANK"> <img src={twitter} alt="twitter icon" /></a>
+            <a href="https://www.instagram.com/savishkaar/" target="_BLANK"><img src={instagram} alt="instagram icon" /></a>
+            <a href="https://www.youtube.com/channel/UCDB5fjkZFrz4BD5MgxlIjPw " target="_BLANK" ><img src={youtube} alt="Youtube icon" /></a>
         </div>
         </section>
         <p className={styles.developercredit}>&#169; A site by Kedar Devasthali and team</p>
