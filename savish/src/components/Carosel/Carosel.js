@@ -50,7 +50,7 @@ function Carosel() {
     data-aos-offset="50"  data-aos-delay="10" 
     data-aos-duration="1000">Saviskar Council 2019-2020</h1>
 		<div className={styles.spacing}>
-            <Carousel responsive={responsive} autoPlaySpeed={2500} autoPlay={true}>
+            <Carousel responsive={responsive}>
 				{state.imgList.map((e,i)=>
 					<div className={styles.card} key={i} >
 					<img src={e} alt="Avatar" className={styles.image}/>

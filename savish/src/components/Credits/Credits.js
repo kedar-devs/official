@@ -13,7 +13,7 @@ const Credits = () => {
     {
       name: "Kedar Devasthali",
       photo: Kedar,
-      position: "Team Leader, Ideator, Backend Developer",
+      position: "Team Leader, Ideator, Backend Developer (Node.js)",
       status: "Computer Department",
       github: "https://github.com/kedar-devs",
       twitter: "",
@@ -63,7 +63,7 @@ const Credits = () => {
     {
       name: "Vipul Chodankar",
       photo: Vipul,
-      position: "Suggested Cloudinary as a means of storing our content",
+      position: "For your suggestions regarding heroku and cloudinary",
       status: "Computer Department",
       github: "https://github.com/vipulchodankar",
       twitter: "https://twitter.com/vipul_chodankar?s=08",
