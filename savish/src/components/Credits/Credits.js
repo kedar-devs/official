@@ -3,12 +3,12 @@ import styles from "./Credits.module.css";
 import Card from "./Card";
 
 const Credits = () => {
-  const Kedar = require("../../photos/Team/Kedar.jpeg");
-  const Riddhi = require("../../photos/Team/Riddhi.jpg");
-  const Deborah = require("../../photos/Team/Deborah.jpeg");
-  const Rohit = require("../../photos/Team/Rohit.JPG");
-  const Deepraj = require("../../photos/Team/Deepraj.jpeg");
-  const Vipul = require("../../photos/Team/Vipul.jpeg");
+  const Kedar = require("../../photos/Kedar.jpeg");
+  const Riddhi = require("../../photos/Riddhi.jpg");
+  const Deborah = require("../../photos/Deborah.jpeg");
+  const Rohit = require("../../photos/Rohit.JPG");
+  const Deepraj = require("../../photos/Deepraj.jpeg");
+  const Vipul = require("../../photos/Vipul.jpeg");
   const Developers = [
     {
       name: "Kedar Devasthali",
