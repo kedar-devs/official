@@ -1,6 +1,6 @@
 import React from 'react'
 import princalsir from '../../photos/pricy.jpg';
-import habbusir from '../../photos/habbu.jfif';
+import habbusir from '../../photos/habbu.jpg';
 import teampic from '../../photos/IMG_7245.JPG';
 import styles from "./AboutUs.module.css"
 import Carosel from "../Carosel/Carosel"
