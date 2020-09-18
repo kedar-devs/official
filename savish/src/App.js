@@ -19,7 +19,9 @@ import Footer from './components/Footer/Footer';
 import LoginUser from './components/Login/LoginUser'
 import AddUser from './components/Login/AddUser'
 import Credits from './components/Credits/Credits';
-import Func from './components/Function/Func'
+import Func from './components/Function/Func';
+import Sendmail from './components/ForgotPass/Sendmail';
+import NewPass from './components/ForgotPass/NewPass';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 // import './App.css'
@@ -56,6 +58,8 @@ function App() {
             <Route path="/addStory" extends component={AddStory} />
             <Route path="/addPaint" extends component={AddPaint} /> 
             <Route path="/addVideo" extends component={AddVideo} /> 
+            <Route path="/reset-password" extends component={Sendmail}/>
+            <Route path="/update-password/:token" extends component={NewPass}/>
             <Footer />
       </Router>
    </div>

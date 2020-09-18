@@ -3,11 +3,24 @@ let User=require('../models/user.model');
 const jwt=require('jsonwebtoken');
 const bcrypt=require('bcryptjs');
 const saltRound=8;
+//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
+const nodemailer=require('nodemailer');
+const sendgridTrans=require('nodemailer-sendgrid-transport')
+const crypto=require('crypto');
 var cloudinary=require('cloudinary').v2
 cloudinary.config({
     cloud_name:'savishkar',
     api_key:'485787349522969',
     api_secret:'zOTZ3DN66ch5LSY7cqcjf5yVu3E'
+})
+process.env.SENDGRID_API_KEY="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"
+const transporter=nodemailer.createTransport({
+    service:'Gmail' ,
+    
+    auth:{
+        user:'savishkargec@gmail.com',
+        pass:'for@*web'
+   }
 })
 let multer=require('multer'),
     uuidv4=require('uuidv4'),
@@ -50,7 +63,9 @@ router.route('/add').post((req,res)=>{
             const title=' '
             const description=' '
             const type=' '
-            const newUser=new User({firstname,lastname,email,password,content,title,description,type})
+            const resetToken=' '
+            const expiresToken=' '
+            const newUser=new User({firstname,lastname,email,password,content,title,description,type,resetToken,expiresToken})
             bcrypt.hash(newUser.password,saltRound,(err,hash)=>{
                 if (err) throw err;
                 newUser.password=hash;
@@ -190,5 +205,83 @@ router.delete('/delete/:id',(req,res)=>{
     .then(()=>res.status(200).json('Deleted successfully'))
     .catch(err=>res.status(400).json('Error:'+err))
 })
+router.post('/forgot-password',(req,res)=>{
+    crypto.randomBytes(32,(err,buffer)=>{
+        if(err){
+            console.log(err)
+        }
+        else{
+            const token =buffer.toString("hex")
+            User.findOne({email:req.body.email},(err,user)=>{
+            if(err || !user){
+                res.status(422).send('No user with this email id available')
+            }
+            else{
+                user.resetToken=token
+                user.expiresToken=Date.now()+3600000
+                user.save()
+                .then(user=>{
+                    console.log('hello')
+                    transporter.sendMail({
+                        to:user.email,
+                        from:"savishkargec@gmail.com",
+                        subject:"password reset",
+                        html:`
+                        <p>Hi ${user.firstname}, forgot your password.<br/> Don't worry we got you covered</p>
+                        <h5><a href="https://savishkar-webapp.herokuapp.com/update-password/${token}">click here</a></h5>
+                        <p>link expires in one hour, thank you</p>
+                        `
+                    },(err,result)=>{
+                        if(err){
+                            console.log(err)
+                        }
+                        else{
+                            res.send("success")
+                        }
+                        transporter.close()
+                    })
 
+                    res.send({
+                        message: 'An email has been sent to the provided email with further instructions.'
+                    });
+                    
+                })
+                .catch(err=>res.status(400).json('Error:'+err))
+
+                    
+               }
+        })
+        }
+    })
+    
+})
+router.post('/new-password',(req,res)=>{
+    console.log(req.body)
+    const password=req.body.password
+    const sentToken=req.body.token
+    console.log(sentToken)
+    User.findOneAndUpdate({resetToken:req.body.token})
+    .then(user=>{
+                
+                console.log('in here')
+                bcrypt.hash(password,saltRound,(err,hash)=>{
+                    if (err) throw err;
+                    console.log(hash)
+                    user.password=hash;
+                    user.resetToken=' ';
+                    user.expiresToken=' ';
+                    user.save()
+                    .then(result=>res.status(200).json("success"))
+                    .catch(err=>{
+                        console.log(err);
+                        res.status(400).json('Error:'+err)})
+                })
+    })
+    .catch(err=>{
+        console.log(err)
+        res.status(400).json('oopsy doopsy sorry'+err)})
+
+
+
+})
 module.exports=router;

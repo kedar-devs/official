@@ -10,7 +10,7 @@ require('dotenv').config();
 const app=express()
 const port=process.env.PORT || 3000
 app.use(cors())
-
+mongoose.set('useFindAndModify', false);
 
 app.use(express.json())
 app.use('/uploads/painting',express.static(path.join(__dirname+'/uploads/painting')))

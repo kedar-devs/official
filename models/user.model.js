@@ -30,7 +30,9 @@ const userSchema=new Schema({
     },
     description:{type:String,required:true},
     title:{type:String,required:true},
-    type:{type:String,required:true}
+    type:{type:String,required:true},
+    resetToken:{type:String,required:true},
+    expiresToken:{type:String,required:true}
     
 })
 
