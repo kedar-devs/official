@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import axios from 'axios';
+import axios from 'axios'
 import logo from '../../photos/newlogo.jpeg';
-import styles from "./Login.module.css";
-import {Link} from "react-router-dom";
+import styles from "./Login.module.css"
+
 class LoginUser extends Component {
     constructor(){
         super()
@@ -47,14 +47,13 @@ class LoginUser extends Component {
             <div className={styles.loginformpage} data-aos="fade-down">
                <form onSubmit={this.onSubmit} method="POST" className={styles.loginform}>
                     <fieldset>
-                        <img src={logo} alt="Savishkar logo" />
+                        <img src={logo} alt="Savishkar logo" className={styles.savishkarlogo}/>
                         <p ref={this.warningref} ></p>
                         <h1>Login</h1>
                         <input type="email" className={styles.username} name="email" placeholder="Email" value={this.state.username} onChange={this.onChange} required />
                         <small id="emailHelp" className={styles.emailhelp}>u'r secret is safe with us</small>
                         <input type="password" className={styles.password} name="password" placeholder="Password" value={this.state.password} onChange={this.onChange} required/>
                         <button type="submit" className={styles.loginbtn} onClick={this.onSubmit} >Submit</button>
-                        <Link to='/reset-password' style={{color:"white"}}>forgot password?</Link>
                     </fieldset>
                </form>
             </div>

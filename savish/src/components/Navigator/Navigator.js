@@ -35,13 +35,15 @@ function Navigator() {
     closedbtn.style.display="block"
   }
   const responsiveNavbarClose=()=>{
+
+if(window.innerWidth<700){
     resnavrref.style.display="none"
     closedbtn.style.display="none"
     resnavrref.classList.remove("moveleft")
     closedbtn.classList.remove("moveleft")
     resnavrref.classList.add("moveright")
     closedbtn.classList.add("moveright")
-  }
+  }}
     if(localStorage.getItem('token')){
       Exist=true
     }
@@ -82,8 +84,8 @@ function Navigator() {
     data-aos-duration="3000"
     data-aos-easing="ease-in-out"> */}
                 <ul className={styles.navlinks} ref={(e)=>{resnavrref=e}} >
-                <Link to="/" className={styles.link}><li className={styles.navlink}>Home</li></Link>
-                  <Link to="/credits" className={styles.link}><li className={styles.navlink}>Credits</li></Link>
+                <Link to="/" className={styles.link}><li className={styles.navlink} onClick={responsiveNavbarClose}>Home</li></Link>
+                  <Link to="/credits" className={styles.link}><li className={styles.navlink} onClick={responsiveNavbarClose}>Credits</li></Link>
                   {Exist?
                   <>
                   <li className={styles.navlink}>

@@ -42,7 +42,7 @@ class LoginAdmin extends Component {
             <div className={styles.loginformpage} data-aos="fade-down">
             <form onSubmit={this.onSubmit} method="POST" className={styles.loginform}>
                  <fieldset>
-                     <img src={logo} alt="Savishkar logo" />
+                     <img src={logo} alt="Savishkar logo" className={styles.savishkarlogo} />
                      <h1>Login</h1>
                      <p ref={this.warningref} ></p>
                      <input type="email" className={styles.username} name="username" required placeholder="Username" value={this.state.username} onChange={this.onChange}  />
