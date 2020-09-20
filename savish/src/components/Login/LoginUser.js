@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import logo from '../../photos/newlogo.jpeg';
 import styles from "./Login.module.css"
-
+import {Link} from 'react-router-dom';
 class LoginUser extends Component {
     constructor(){
         super()
