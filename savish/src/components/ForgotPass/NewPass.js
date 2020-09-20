@@ -47,7 +47,7 @@ class Sendmail extends Component {
             <div className={styles.loginformpage} data-aos="fade-down">
                <form onSubmit={this.onSubmit} method="POST" className={styles.loginform}>
                     <fieldset>
-                        <img src={logo} alt="Savishkar logo" />
+                    <img src={logo} alt="Savishkar logo" className={styles.savishkarlogo}/>
                         <p ref={this.warningref} ></p>
                         <h1>Update Password</h1>
                         <input type="password" className={styles.username} name="password" placeholder="Password" value={this.state.password} onChange={this.onChange} required />

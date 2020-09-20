@@ -95,8 +95,8 @@ if(window.innerWidth<700){
                     <button className={styles.linkbtn}  onClick={()=>RemoveToken()}>Log out</button>
                   </li>
                   </>
-                  : <><Link to="/signin" className={styles.link}><li className={styles.navlink}>Sign In</li></Link>
-                  <Link to="/loginuser" className={styles.link}><li className={styles.navlink}>Log In</li></Link></>}
+                  : <><Link to="/signin" className={styles.link}><li className={styles.navlink}  onClick={responsiveNavbarClose}>Sign In</li></Link>
+                  <Link to="/loginuser" className={styles.link}><li className={styles.navlink}  onClick={responsiveNavbarClose}>Log In</li></Link></>}
               </ul>
                 <img src={hamburgericon} alt="hamburger icon" className={styles.hamburgericon} onClick={responsiveNavbarOpen} data-aos="fade-left" data-aos-delay="100"
     data-aos-duration="3000"
