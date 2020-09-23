@@ -20,9 +20,9 @@ function Footer() {
                     <p>Artwork</p>
                 </div>
                 <div className={classnames(styles.rightexplore,styles.column)}>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                    <p>lorem</p>
+                    <p>credits</p>
+                    <p></p>
+                    <p></p>
                 </div>
             </div>
         </div>
