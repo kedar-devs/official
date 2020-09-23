@@ -149,8 +149,8 @@ router.route('/:id').delete((req,res)=>{
     .catch(err => res.status(400).json('Error:'+err))
 })
 router.post('/update/:id',(req,res)=>{
-    Paints.findById(req.params.id)
     const url=req.protocol+'://'+req.get('host')
+    Paints.findById(req.params.id)
     .then(paint=>{
         
         paint.title=req.body.title

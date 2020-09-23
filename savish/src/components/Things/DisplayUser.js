@@ -10,7 +10,7 @@ const onAdd=(props)=>{
     
     if(props.user.type === 'poem'){
         const poem = {
-            poet: props.user.firstname+props.user.lastname,
+            poet: props.user.firstname+' '+props.user.lastname,
             content: props.user.content,
             title: props.user.title,
             about:props.user.discription,
@@ -32,7 +32,7 @@ const onAdd=(props)=>{
     if(props.user.type === 'story'){
         const story = {
 
-            Author: props.user.firstname+props.user.lastname,
+            Author: props.user.firstname+' '+props.user.lastname,
             content: props.user.content,
             about: props.user.discription,
             title: props.user.title,
@@ -58,7 +58,7 @@ const onAdd=(props)=>{
         
         
         const paint={
-            painter: props.user.firstname+props.user.lastname,
+            painter: props.user.firstname+' '+props.user.lastname,
             title:props.user.title,
             content: props.user.content,
             date:new Date()
@@ -80,7 +80,7 @@ const onAdd=(props)=>{
     
     if(props.user.type === 'video'){
         const video={
-            creator: props.user.firstname+props.user.lastname,
+            creator: props.user.firstname+' '+props.user.lastname,
             content: props.user.content,
             title: props.user.title,
             about:props.user.discription,
@@ -112,15 +112,17 @@ const ondelete=(props)=>{
     window.location.reload(true);
 }
 const User=props=>{
+    if(props.user.content!=' '){
     if(props.user.type==='poem'){
+        localStorage.setItem("data",props.user.content);
         return(
             <div>
                 <div className={styles.cardL}>
                 <img className={styles.image}variant="top" src={props.user.content} alt="couldn't load"/>
                 <div className={styles.body}>
-                    <div className={styles.title}>{props.user.firstname+props.user.lastname}</div>
+                    <div className={styles.title}>{props.user.firstname+" "+props.user.lastname}</div>
                     <div className={styles.subtitle}>{props.user.title}</div>
-                    <button className={styles.btn}><Link className={styles.link} to={{pathname:'/view/:'+props.user,data:props.user}} >View</Link></button>
+                    <button className={styles.btn}><Link className={styles.link} to="/view" >View</Link></button>
                     <div className={styles.box}>
                     <button className={styles.outline} onClick={()=>onAdd(props)}>Add</button>
                     <button  className={styles.outline}  onClick={()=>ondelete(props)}>Remove</button>
@@ -147,13 +149,14 @@ const User=props=>{
         )
     }
     else if(props.user.type!=="video"){
+        localStorage.setItem("data",props.user.content);
     return(
         <div className={styles.cardL}>
             <img className={styles.image} src={photu} alt="could not load"/>
             <div className={styles.body}>
                 <div className={styles.title}>{props.user.title}</div>
                 <div className={styles.subtitle}><span>By:{props.user.firstname}</span><span>About:{props.user.discription}</span></div>
-                <button className={styles.btn}><Link className={styles.link} to={{pathname:'/view/:'+props.user,data:props.user}} >View</Link></button>
+                <button className={styles.btn}><Link className={styles.link} to="/view" >View</Link></button>
                 <div className={styles.box}>
                     <button className={styles.outline} onClick={()=>onAdd(props)}>Add</button>
                     <button className={styles.outline} onClick={()=>ondelete(props)}>Remove</button>
@@ -175,6 +178,10 @@ const User=props=>{
             </div>
         )
     }
+}
+else{
+    return(<div></div>)
+}
     
 }
 

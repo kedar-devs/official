@@ -139,7 +139,7 @@ scorePassword(pass) {
                         {
                           this.state.passwordseen?<img src={closed_eye} alt="close password"onClick={this.passwordshowhide}/>:<img src={open_eye} alt="show password" onClick={this.passwordshowhide}/>
                         }
-                        <small>(i.e. atleast one uppercase letter,one number, a special characters and a length of 8)</small>
+                        <br /><small>(i.e. atleast one uppercase letter,one number, a special characters and pssword min length of 8)</small>
                       </div>
                     </div>
                <input type="password" name="cpassword" placeholder=" Confirm Password" value={this.state.cpassword} onChange={this.onchange} required/>
