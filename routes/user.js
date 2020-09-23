@@ -171,7 +171,7 @@ router.post('/deletecontent/:id',(req,res)=>{
     User.findById(req.params.id)
     .then(user=>{
         
-        user.content=''
+        user.content=' '
         
         user.save()
         .then(result=>res.status(200).json('Success'))
@@ -185,14 +185,13 @@ router.post('/removecontent/:id',(req,res)=>{
     console.log(req.body)
     User.findById(req.params.id)
     .then(user=>{
-        pathname=req.body.content.replace('http://localhost:3000/','')
-        console.log(pathname)
-        fs.unlink(pathname, function (err) {
+        cloudinary.uploader.destroy(req.body.content, function(err,result) { 
             if (err) throw err;
-            // if no error, file has been deleted successfully
-            console.log('File deleted!');
+
+            console.log(result)
+            
         });
-        user.content=''
+        user.content=' '
         
         user.save()
         .then(result=>res.status(200).json('Success'))

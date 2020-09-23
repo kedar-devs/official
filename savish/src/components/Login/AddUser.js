@@ -134,10 +134,12 @@ scorePassword(pass) {
                <input type="email"  name="email" placeholder="Email" value={this.state.email} onChange={this.onchange} required/>
                     <div className={styles.showingpasssword}>
                       <input type="password" name="password" id="password" placeholder="Password(Please enter a strong password)" value={this.state.password} onChange={this.onchange} required/>
+                      
                       <div >
                         {
                           this.state.passwordseen?<img src={closed_eye} alt="close password"onClick={this.passwordshowhide}/>:<img src={open_eye} alt="show password" onClick={this.passwordshowhide}/>
                         }
+                        <small>(i.e. atleast one uppercase letter,one number, a special characters and a length of 8)</small>
                       </div>
                     </div>
                <input type="password" name="cpassword" placeholder=" Confirm Password" value={this.state.cpassword} onChange={this.onchange} required/>

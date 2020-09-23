@@ -48,7 +48,7 @@ function Carosel() {
     {/* <h1 className={styles.heading}><span>Saviskar Council 2019-2020</span></h1> */}
     <h1 className={styles.heading} data-aos="fade-down" 
     data-aos-offset="50"  data-aos-delay="10" 
-    data-aos-duration="1000">Saviskar Council 2019-2020</h1>
+    data-aos-duration="1000">Saviskaar Council 2019-2020</h1>
 		<div className={styles.spacing}>
             <Carousel responsive={responsive}>
 				{state.imgList.map((e,i)=>

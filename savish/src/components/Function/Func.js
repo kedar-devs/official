@@ -121,12 +121,7 @@ class Func extends Component {
                  onChange={this.ontype}
                   id="rb3" className={styles.radioinput}/>
           <label for="rb3" className={styles.radiolabel}>Paint</label>
-          <input type="radio" 
-                 name = "type"
-                 value = 'video'
-                 checked={this.state.type==='video'}
-                 onChange={this.ontype} id="rb4" className={styles.radioinput}/>
-          <label for="rb4" className={styles.radiolabel}>Video</label>
+          
         </div>
           <p> You have selected {this.state.type}</p>
             <input type="text" name="title" value={this.state.title} onChange={this.onchange} required placeholder="Title"/>

@@ -22,6 +22,7 @@ import Credits from './components/Credits/Credits';
 import Func from './components/Function/Func';
 import Sendmail from './components/ForgotPass/Sendmail';
 import NewPass from './components/ForgotPass/NewPass';
+import View from './components/View/View';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 // import './App.css'
@@ -60,6 +61,7 @@ function App() {
             <Route path="/addVideo" extends component={AddVideo} /> 
             <Route path="/reset-password" extends component={Sendmail}/>
             <Route path="/update-password/:token" extends component={NewPass}/>
+            <Route path="/view" extends component={View}/>
             <Footer />
       </Router>
    </div>

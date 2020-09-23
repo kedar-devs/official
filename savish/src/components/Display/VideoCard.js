@@ -5,7 +5,7 @@ import Reactplayer from 'react-player';
 const VideoCard = ({video}) => {
     return (
         <div className={styles.display} data-aos="fade-down" data-aos-offset="-100">
-            <div>
+            <div className={style.videocontainer}>
                 <Reactplayer
                     width='450px'
                     height='300px'

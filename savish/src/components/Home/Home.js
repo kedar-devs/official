@@ -9,7 +9,7 @@ function Home() {
             
         </div>
         <div className={styles.savishkarheading} data-aos="flip-right">
-            <h2 className={styles.savishkarhead}>Savishkar</h2>
+            <h2 className={styles.savishkarhead}>Savishkaar</h2>
             <br />
             <h3 className={styles.savishkarcaption}>GEC Art And Literature Club</h3>        
         </div>
