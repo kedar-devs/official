@@ -7,8 +7,7 @@ import photu from '../../photos/set1.jpg';
 import styles from '../Display/Display.module.css';
 const onView=()=>{
 
-    const {history}=this.props;
-    history.push("/view")
+    this.props.history.push("loginuser")
 }
 const onAdd=(props)=>{
     
