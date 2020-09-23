@@ -6,9 +6,10 @@ import axios from 'axios';
 import photu from '../../photos/set1.jpg';
 import styles from '../Display/Display.module.css';
 import { useHistory } from 'react-router-dom';
-const onView=(props)=>{
-    const history = useHistory();
-    this.props.history.push("view")
+const history = useHistory();
+const onView=()=>{
+    
+    history.push("/view")
 }
 const onAdd=(props)=>{
     
@@ -137,6 +138,7 @@ const User=props=>{
         )
     }
     if(props.user.type==="paint"){
+        localStorage.setItem("data",props.user.content);
         return(
             <div className={styles.cardL}>
                 <img className={styles.image} src={props.user.content} alt="couldn't load"/>
