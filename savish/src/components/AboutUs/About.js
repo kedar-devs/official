@@ -71,7 +71,7 @@ const About=()=>{
     data-aos-offset="50">About Us</h1>
             <div className={styles.teamimagediv} data-aos="zoom-in" data-aos-anchor-placement="center-bottom">
                 <img src={teampic} className={styles.teampic} alt="team"/>
-                <p className={styles.whatissavishkar}>We the members of Savishkaar welcome you to our official site. The club formed by students of Goa Engineering College with the help of our Faculty in order to encourage students to be creative and bring the best out of them by supporting thier creative vision </p>
+                <div className={styles.whatissavishkar}><h5>दिल से लिखी कहानियों की एक बढती हुई रफ्तार..  Enlightening the stage of creativity Welcome to GEC " SAVISHKAAR</h5><br /><p>We the members of Savishkaar welcome you to our official site. The club formed by students of Goa Engineering College with the help of our Faculty in order to encourage students to be creative and bring the best out of them by supporting thier creative vision </p></div>
             </div>
             <Carosel />
             <div className={styles.gecfacultyvoice} data-aos="fade-down">

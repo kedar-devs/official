@@ -122,7 +122,7 @@ const User=props=>{
                 <div className={styles.body}>
                     <div className={styles.title}>{props.user.firstname+" "+props.user.lastname}</div>
                     <div className={styles.subtitle}>{props.user.title}</div>
-                    <button className={styles.btn}><Link className={styles.link} to="/view" >View</Link></button>
+                    <button className={styles.btn} onClick={}><Link className={styles.link} to="/view" >View</Link></button>
                     <div className={styles.box}>
                     <button className={styles.outline} onClick={()=>onAdd(props)}>Add</button>
                     <button  className={styles.outline}  onClick={()=>ondelete(props)}>Remove</button>
