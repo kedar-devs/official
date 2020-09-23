@@ -5,8 +5,9 @@ import Stv from '../Stv.js';
 import axios from 'axios';
 import photu from '../../photos/set1.jpg';
 import styles from '../Display/Display.module.css';
-const onView=()=>{
-
+import { useHistory } from 'react-router-dom';
+const onView=(props)=>{
+    const history = useHistory();
     this.props.history.push("view")
 }
 const onAdd=(props)=>{
@@ -142,7 +143,7 @@ const User=props=>{
                 <div className={styles.body}>
                     <div className={styles.title}>{props.user.firstname+props.user.lastname}</div>
                     <div className={styles.subtitle}>{props.user.title}</div>
-                    <button className={styles.btn}><Link className={styles.link} to={{pathname:'/view/:'+props.user,data:props.user}} >View</Link></button>
+                    <button className={styles.btn} onClick={()=>onView()}>View</button>
                     <div className={styles.box}>
                     <button className={styles.outline} onClick={()=>onAdd(props)}>Add</button>
                     <button  className={styles.outline}  onClick={()=>ondelete(props)}>Remove</button>
@@ -159,7 +160,7 @@ const User=props=>{
             <div className={styles.body}>
                 <div className={styles.title}>{props.user.title}</div>
                 <div className={styles.subtitle}><span>By:{props.user.firstname}</span><span>About:{props.user.discription}</span></div>
-                <button className={styles.btn}><Link className={styles.link} to="/view" >View</Link></button>
+                <button className={styles.btn} onClick={()=>onView()}>View</button>
                 <div className={styles.box}>
                     <button className={styles.outline} onClick={()=>onAdd(props)}>Add</button>
                     <button className={styles.outline} onClick={()=>ondelete(props)}>Remove</button>
