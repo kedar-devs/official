@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import logo from '../../photos/newlogo.jpeg';
 import styles from "./Forgot.module.css";
-import {useParams} from "react-router-dom";
+
 //const {storeit}=useParams()
 class Sendmail extends Component {
     constructor(){

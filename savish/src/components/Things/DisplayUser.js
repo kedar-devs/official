@@ -5,11 +5,10 @@ import Stv from '../Stv.js';
 import axios from 'axios';
 import photu from '../../photos/set1.jpg';
 import styles from '../Display/Display.module.css';
-import { useHistory } from 'react-router-dom';
-const history = useHistory();
+
+
 const onView=()=>{
-    
-    history.push("/view")
+    window.location.replace("view")
 }
 const onAdd=(props)=>{
     
@@ -117,7 +116,7 @@ const ondelete=(props)=>{
     window.location.reload(true);
 }
 const User=props=>{
-    if(props.user.content!=' '){
+    if(props.user.content!==' '){
     if(props.user.type==='poem'){
         localStorage.setItem("data",props.user.content);
         return(
