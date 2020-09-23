@@ -6,7 +6,7 @@ import axios from 'axios';
 import photu from '../../photos/set1.jpg';
 import styles from '../Display/Display.module.css';
 const onView=()=>{
-    
+    window.location.reload(true);
 }
 const onAdd=(props)=>{
     
