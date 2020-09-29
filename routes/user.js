@@ -227,7 +227,7 @@ router.post('/forgot-password',(req,res)=>{
                         subject:"password reset",
                         html:`
                         <p>Hi ${user.firstname}, forgot your password.<br/> Don't worry we got you covered</p>
-                        <h5><a href="https://savishkar-webapp.herokuapp.com/update-password/${token}">click here</a></h5>
+                        <h5><a href="https://savishkaar.herokuapp.com/update-password/${token}">click here</a></h5>
                         <p>link expires in one hour, thank you</p>
                         `
                     },(err,result)=>{
