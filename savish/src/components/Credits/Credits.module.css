@@ -62,6 +62,8 @@
 .icons {
   margin: 10px 0 0 0;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .icon {
@@ -69,9 +71,9 @@
 }
 
 .image {
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
+  width:100px;
+  /* height: 100px; */
+  border-radius: 5%;
 }
 
 @media (max-width: 1500px) {

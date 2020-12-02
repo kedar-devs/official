@@ -86,6 +86,19 @@
     left: -30px;
     top: 15px;
 }
+.instruction{
+    position: relative;
+    top: -10px;
+    color: aliceblue;
+}
+.redirect{
+    margin-top: 20px;
+    text-align: center;
+}
+.redirect a{
+    color: aliceblue;
+
+}
 @media(max-width:700px){
     .loginform input{
         width: 250px;

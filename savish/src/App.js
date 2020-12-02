@@ -50,7 +50,7 @@ function App() {
             <Route path="/function" exact component={Func} />
             <Route path='/admin' exact component={LoginAdmin} />
             <Route path="/things" exact component={Things} /> 
-            <Route path="/credits" component={Credits}/>
+            <Route path="/team" component={Credits}/>
             <Route path="/poemdisp" exact component={DisplayPoem} />
             <Route path="/videodisp" exact component={DisplayVideo} />  
             <Route path="/paintdisp" exact component={DisplayPaint} />

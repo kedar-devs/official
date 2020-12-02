@@ -5,14 +5,14 @@ import styles from './Carosel.module.css'
 function Carosel() {
 	const [state, setState] = useState({})
 	useEffect(() => {
-        const img1 = require('../../photos/sa2.JPG');
-        const img2 = require('../../photos/sa4.JPG');
-        const img3 = require('../../photos/sa5.JPG');
-        const img4 = require('../../photos/sa6.JPG');
-        const img5 = require('../../photos/sa7.JPG');
-        const img6 = require('../../photos/sa8.JPG');
-        const img7 = require('../../photos/sa3.JPG');
-        const img8 = require('../../photos/saboii.JPG');
+        const img1 = require("../../photos/Rohit.JPG");
+        const img2 = require('../../photos/suniti.jpg');
+        const img3 = require('../../photos/aish.jpg');
+        const img4 = require('../../photos/shivam.jpg');
+        const img5 = require('../../photos/aru.jpg');
+        const img6 = require('../../photos/vri.jpg');
+        const img7 = require('../../photos/eri.jpg');
+        const img8 = require('../../photos/deep.jpg');
         setState({
             index: 0,
             imgList: [ img1, img2, img3, img4, img5, img6, img7, img8],

@@ -53,9 +53,14 @@ class LoginUser extends Component {
                         <input type="email" className={styles.username} name="email" placeholder="Email" value={this.state.username} onChange={this.onChange} required />
                         <small id="emailHelp" className={styles.emailhelp}>u'r secret is safe with us</small>
                         <input type="password" className={styles.password} name="password" placeholder="Password" value={this.state.password} onChange={this.onChange} required/>
-                        <button type="submit" className={styles.loginbtn} onClick={this.onSubmit} >Submit</button>
-                        <Link to="/reset-password" style={{color:"white"}}>forgot password?</Link>
+                        <small id="emailHelp" className={styles.emailhelp}>
+                            <Link to="/reset-password" style={{color:"white"}}>
+                                forgot password?
+                            </Link>
+                        </small>
+                        <button type="submit" className={styles.loginbtn} onClick={this.onSubmit} style={{marginTop:"20px"}}>Submit</button>
                     </fieldset>
+           <p className={styles.redirect}><Link to="/loginuser">Don't have an account? Signin</Link></p>
                </form>
             </div>
         )

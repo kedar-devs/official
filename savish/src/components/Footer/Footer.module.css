@@ -35,6 +35,10 @@
 .column p{
     padding: 5% 0;
 }
+.column p a{
+    text-decoration: none;
+    color: aliceblue;
+}
 .socialmedias{
     width: 30%;
 }
@@ -70,6 +74,10 @@
     width:100%;
     text-align:center;
 }
+.twitter{
+    position: relative;
+    top: 3px;
+}
 @media(max-width:900px)
 {
     *{
@@ -101,7 +109,7 @@
         text-align: center;
     }
     .socialmedias{
-        width: 140px;
+        width: 170px;
     }
     .companyname{
         justify-content: center;

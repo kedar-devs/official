@@ -6,16 +6,6 @@ import hamburgericon from "../../icons/hamburgericon.svg"
 import closebtn from "../../icons/closebtn.svg"
 import axios from 'axios'
 function Navigator() {
-  const DeleteUser=()=>{
-    let id=localStorage.getItem('token2')
-    localStorage.clear()
-    axios.delete("/user/delete/"+id)
-    .then(res=>{
-      console.log("User deleted");
-      window.location.reload(true);
-    })
-    .catch(err=>console.log(err))
-  }
   const RemoveToken=()=>{
     console.log("in remove item")
     localStorage.removeItem('token')
@@ -77,7 +67,7 @@ if(window.innerWidth<700){
            {/* className={styles.hamburgericon} */}
         <header className={styles.navbar} >
             <div className={styles.leftnav} data-aos="fade-left" >
-              <img src={logo} alt="savishlogo" title="Saviskar Logo" className={styles.logo}/>
+              <Link to="/"><img src={logo} alt="savishlogo" title="Saviskar Logo" className={styles.logo}/></Link>
               </div>
               <img src={closebtn} className={styles.closebtn} ref={e=>closedbtn=e} onClick={responsiveNavbarClose} alt="close btn"/>
                 {/* <ul className={styles.navlinks} ref={(e)=>{resnavrref=e}} data-aos="fade-left" data-aos-delay="100"
@@ -85,17 +75,14 @@ if(window.innerWidth<700){
     data-aos-easing="ease-in-out"> */}
                 <ul className={styles.navlinks} ref={(e)=>{resnavrref=e}} >
                 <Link to="/" className={styles.link}><li className={styles.navlink} onClick={responsiveNavbarClose}>Home</li></Link>
-                  <Link to="/credits" className={styles.link}><li className={styles.navlink} onClick={responsiveNavbarClose}>Credits</li></Link>
+                  <Link to="/team" className={styles.link}><li className={styles.navlink} onClick={responsiveNavbarClose}>Team</li></Link>
                   {Exist?
-                  <>
-                  <li className={styles.navlink}>
-                    <button className={styles.linkbtn}  onClick={()=>DeleteUser()}>Sign out</button>
-                  </li>  
+                  <> 
                   <li className={styles.navlink}>
                     <button className={styles.linkbtn}  onClick={()=>RemoveToken()}>Log out</button>
                   </li>
                   </>
-                  : <><Link to="/signin" className={styles.link}><li className={styles.navlink}  onClick={responsiveNavbarClose}>Sign In</li></Link>
+                  :<>
                   <Link to="/loginuser" className={styles.link}><li className={styles.navlink}  onClick={responsiveNavbarClose}>Log In</li></Link></>}
               </ul>
                 <img src={hamburgericon} alt="hamburger icon" className={styles.hamburgericon} onClick={responsiveNavbarOpen} data-aos="fade-left" data-aos-delay="100"

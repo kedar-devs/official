@@ -4,6 +4,7 @@ import styles from "./Login.module.css"
 import axios from "axios"
 import closed_eye from "../../icons/closedeye.svg"
 import open_eye from "../../icons/openeye.svg"
+import {Link} from "react-router-dom"
 function validateEmail(email) {
   // eslint-disable-next-line 
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -132,20 +133,25 @@ scorePassword(pass) {
                   <input type="text"  name="lastname" placeholder="Last Name" value={this.state.lastname} onChange={this.onchange} required/>
                </span>
                <input type="email"  name="email" placeholder="Email" value={this.state.email} onChange={this.onchange} required/>
+               <div>
                     <div className={styles.showingpasssword}>
-                      <input type="password" name="password" id="password" placeholder="Password(Please enter a strong password)" value={this.state.password} onChange={this.onchange} required/>
+                      <input type="password" name="password" id="password" placeholder="Password" value={this.state.password} onChange={this.onchange} required/>
                       
                       <div >
                         {
                           this.state.passwordseen?<img src={closed_eye} alt="close password"onClick={this.passwordshowhide}/>:<img src={open_eye} alt="show password" onClick={this.passwordshowhide}/>
                         }
-                        <br /><small>(i.e. atleast one uppercase letter,one number, a special characters and pssword min length of 8)</small>
+                        <br />
+                        </div>
                       </div>
+                    <small className={styles.instruction}>(Min 8 chars & include a capital letter,number,special character)</small>
                     </div>
+                    
                <input type="password" name="cpassword" placeholder=" Confirm Password" value={this.state.cpassword} onChange={this.onchange} required/>
                 <h2>WE WELCOME YOU {this.state.firstname} {this.state.lastname} !!!</h2>
                <button type="submit" >Submit</button>
            </fieldset>
+           <p className={styles.redirect}><Link to="/loginuser">Already a user? Signin</Link></p>
       </form>
    </div>
      )
