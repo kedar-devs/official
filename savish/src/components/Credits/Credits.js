@@ -4,20 +4,20 @@ import Card from "./Card";
 
 const Credits = () => {
   const Kedar = require("../../photos/Kedar.jpeg");
-  const Riddhi = require("../../photos/Riddhi.jpg");
+  const Riddhi = require("../../photos/Riddhi.jpeg");
   const Deborah = require("../../photos/Deborah.jpeg");
   const Rohit = require("../../photos/Rohit.JPG");
   // const Deepraj = require("../../photos/Deepraj.jpeg");
   const Vipul = require("../../photos/Vipul.jpeg");
   // const i = require("../../photos/Rohit.JPG");
-  const Suniti = require('../../photos/suniti.jpg');
-  const Aishwarya = require('../../photos/aish.jpg');
-  const Shivam = require('../../photos/shivam.jpg');
-  const Arushi = require('../../photos/aru.jpg');
-  const Vritika = require('../../photos/vri.jpg');
-  const Erisha = require('../../photos/eri.jpg');
-  const Deepraj = require('../../photos/deep.jpg');
-  
+  const Suniti = require("../../photos/suniti.jpg");
+  const Aishwarya = require("../../photos/aish.jpg");
+  const Shivam = require("../../photos/shivam.jpg");
+  const Arushi = require("../../photos/aru.jpg");
+  const Vritika = require("../../photos/vri.jpg");
+  const Erisha = require("../../photos/eri.jpg");
+  const Deepraj = require("../../photos/deep.jpg");
+
   const Developers = [
     {
       name: "Rohit Narulkar",
