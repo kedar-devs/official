@@ -8,23 +8,13 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <section>
-        <div
-          className={styles.companyname}
-          data-aos="fade-left"
-          data-aos-offset="-200"
-        >
+        <div className={styles.companyname}>
           <img src={geclogo} alt="Goa College of Engineering Logo" />
           <p>Savishkaar</p>
         </div>
         <div className={styles.explore}>
-          <span data-aos="fade-left" data-aos-offset="-200">
-            Explore
-          </span>
-          <div
-            className={styles.sitemap}
-            data-aos="fade-left"
-            data-aos-offset="-200"
-          >
+          <span>Explore</span>
+          <div className={styles.sitemap}>
             <div className={classnames(styles.column)}>
               <Link to="/">
                 <p>Home</p>
@@ -49,11 +39,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div
-          className={styles.socialmedias}
-          data-aos="fade-left"
-          data-aos-offset="-200"
-        >
+        <div className={styles.socialmedias}>
           <FooterSocials />
         </div>
       </section>

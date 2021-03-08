@@ -4,17 +4,12 @@ import classnames from "classnames";
 import Event_svg from "../../icons/event.svg";
 import FooterSocials from "../Footer/FooterSocials";
 import gmail from "../../icons/gmail.svg";
+import Heading from "../Headings/Heading";
 
 const ContactUs = () => {
   return (
-    <div>
-      <h1
-        className={classnames(styles.abtheading, "heading")}
-        data-aos="fade-down"
-        data-aos-offset="50"
-      >
-        Get In Touch
-      </h1>
+    <div data-aos="fade-down" data-aos-offset="50">
+      <Heading title="Get in touch" />
       <div className={styles.contactus}>
         <img
           src={Event_svg}

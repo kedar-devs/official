@@ -1,79 +1,79 @@
-import React,{useEffect,useState} from 'react'
+import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import styles from './Carosel.module.css'
+import Heading from "../Headings/Heading";
+import styles from "./Carosel.module.css";
 function Carosel() {
-	const [state, setState] = useState({})
-	useEffect(() => {
-        const img1 = require("../../photos/Rohit.JPG");
-        const img2 = require('../../photos/suniti.jpg');
-        const img3 = require('../../photos/aish.jpg');
-        const img4 = require('../../photos/shivam.jpg');
-        const img5 = require('../../photos/aru.jpg');
-        const img6 = require('../../photos/vri.jpg');
-        const img7 = require('../../photos/eri.jpg');
-        const img8 = require('../../photos/deep.jpg');
-        setState({
-            index: 0,
-            imgList: [ img1, img2, img3, img4, img5, img6, img7, img8],
-            name: ['Rohit Narulkar', 'Suniti Gaonkar', 'Aishwarya Parab', 'Shivam Raikar', 'Aarushi Raghav', 'Vritika Naik', 'Erisha Ferrao', 'Deepraj Bhosle'],
-            designation: ['President', 'Chairperson', 'Literature section', 'Art Section', 'PR & Managment', 'Technical Adviser', 'Secretary', 'Assistance Technical Advisar']
-        })
-	},[])
-	const responsive = {
-        superLargeDesktop: {
-          // the naming can be any, depends on you.
-          breakpoint: { max: 4000, min: 3000 },
-          items: 5
-        },
-        desktop: {
-          breakpoint: { max: 3000, min: 1000 },
-          items: 3
-        },
-        tablet: {
-          breakpoint: { max: 1000, min: 700},
-          items: 2
-        },
-        mobile: {
-          breakpoint: { max: 700 , min: 0 },
-          items: 1
-        }
-	  };
-	  
-		if(!state.imgList)
-	  		return<></>
-	else{
-	return (
-    <>
-    {/* <h1 className={styles.heading}><span>Saviskar Council 2019-2020</span></h1> */}
-    <h1 className={styles.heading} data-aos="fade-down" 
-    data-aos-offset="50"  data-aos-delay="10" 
-    data-aos-duration="1000">Saviskaar Council 2019-2020</h1>
-		<div className={styles.spacing}>
-            <Carousel responsive={responsive}>
-				{state.imgList.map((e,i)=>
-					<div className={styles.card} key={i} >
-					<img src={e} alt="Avatar" className={styles.image}/>
-					<div className={styles.container}>
-				<h4 className={styles.name}>{state.name[i]}</h4> 
-						<p className={styles.designation}>{state.designation[i]}</p> 
-					</div> 
-					</div>	
-				)}
-			{/* <div className={styles.card} >
+  const [state, setState] = useState({});
+  useEffect(() => {
+    const img1 = require("../../photos/CouncilInaugration.jpg");
+    const img2 = require("../../photos/LanguageDay.jpeg");
+    const img3 = require("../../photos/Openmic2.JPG");
+    setState({
+      index: 0,
+      imgList: [img1, img2, img3],
+      name: ["Council Inaugration", "Matrubasha Diwas", "Open Mic"],
+      designation: [
+        "President",
+        "Chairperson",
+        "Literature section",
+        "Art Section",
+        "PR & Managment",
+        "Technical Adviser",
+        "Secretary",
+        "Assistance Technical Advisar",
+      ],
+    });
+  }, []);
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1000 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1000, min: 700 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 700, min: 0 },
+      items: 1,
+    },
+  };
+
+  if (!state.imgList) return <></>;
+  else {
+    return (
+      <>
+        {/* <h1 className={styles.heading}><span>Saviskar Council 2019-2020</span></h1> */}
+        <Heading title="Events by Savishkaar" />
+        <div className={styles.spacing}>
+          <Carousel responsive={responsive}>
+            {state.imgList.map((e, i) => (
+              <div className={styles.card} key={i} data-aos="flip-right">
+                <img src={e} alt="Avatar" className={styles.image} />
+                <div className={styles.container}>
+                  <h4 className={styles.name}>{state.name[i]}</h4>
+                  {/* <p className={styles.designation}>{state.designation[i]}</p> */}
+                </div>
+              </div>
+            ))}
+            {/* <div className={styles.card} >
 				<img src="https://cdn.pixabay.com/photo/2014/05/03/01/03/macbook-336704_960_720.jpg" alt="Avatar" style={{width:"100%"}}/>
 				<div className={styles.container}>
 					<h4><b>John Doe</b></h4> 
 					<p>Architect & Engineer</p> 
 				</div> 
 				</div>*/}
-			</Carousel>
+          </Carousel>
         </div>
-        <h1 className={styles.heading} data-aos="fade-down" 
-    data-aos-offset="50"  data-aos-delay="10" 
-    data-aos-duration="1000">From the Faculty</h1>
-        </>
-	)}
+      </>
+    );
+  }
 }
 
-export default Carosel
+export default Carosel;
