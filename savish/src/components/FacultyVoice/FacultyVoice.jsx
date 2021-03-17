@@ -1,7 +1,7 @@
 import React from "react";
 import princalsir from "../../photos/pricy.jpg";
 import habbusir from "../../photos/habbu.jpg";
-import classnames from "classnames";
+// import classnames from "classnames";
 import styles from "./FacultyVoice.module.css";
 import Heading from "../Headings/Heading";
 const FacultyVoice = () => {

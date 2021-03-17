@@ -23,11 +23,10 @@ const FooterSocials = ({ notemail }) => {
       </a>
       {!notemail && (
         <>
-          <a
-            href="https://www.youtube.com/channel/UCDB5fjkZFrz4BD5MgxlIjPw "
-            target="_BLANK"
-          >
-            <img src={gmail} alt="Youtube icon" />
+          <a 
+          href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=savishkargec@gmail.com" 
+          target="_blank">
+            <img src={gmail} alt="Gmail icon" />
           </a>
 
           <a

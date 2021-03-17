@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Reactplayer from 'react-player';
-import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Stv from '../Stv.js';
 import axios from 'axios';
 import photu from '../../photos/set1.jpg';

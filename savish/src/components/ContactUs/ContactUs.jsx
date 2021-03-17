@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./ContactUs.module.css";
-import classnames from "classnames";
+// import classnames from "classnames";
 import Event_svg from "../../icons/event.svg";
 import FooterSocials from "../Footer/FooterSocials";
 import gmail from "../../icons/gmail.svg";
@@ -18,10 +18,14 @@ const ContactUs = () => {
         />
         <div className={styles.getintouch}>
           <h2>Want to organize an event? Contact us</h2>
+          <a 
+          href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=savishkargec@gmail.com" 
+          target="_blank">
           <button>
             Over
             <img src={gmail} alt="Youtube icon" />
           </button>
+          </a>
           <p>OR</p>
           <h3>Connect with us on social media!</h3>
           <div className={styles.socialicons}>

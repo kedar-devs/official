@@ -19,7 +19,7 @@ const transporter=nodemailer.createTransport({
     
     auth:{
         user:'savishkargec@gmail.com',
-        pass:'for@*web'
+        pass:'For@*Web123'
    }
 })
 let multer=require('multer'),

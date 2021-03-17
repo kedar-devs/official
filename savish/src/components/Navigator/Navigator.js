@@ -4,7 +4,7 @@ import styles from './Navigator.module.css';
 import logo from "../../photos/newlogo.jpeg"
 import hamburgericon from "../../icons/hamburgericon.svg"
 import closebtn from "../../icons/closebtn.svg"
-import axios from 'axios'
+// import axios from 'axios'
 function Navigator() {
   const RemoveToken=()=>{
     console.log("in remove item")

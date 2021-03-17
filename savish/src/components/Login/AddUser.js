@@ -69,7 +69,7 @@ scorePassword(pass) {
 
   var variationCount = 0;
   for (var check in variations) {
-      variationCount += (variations[check] == true) ? 1 : 0;
+      variationCount += (variations[check] === true) ? 1 : 0;
   }
   score += (variationCount - 1) * 10;
 
