@@ -53,7 +53,7 @@ scorePassword(pass) {
       return score;
 
   // award every unique letter until 5 repetitions
-  var letters = new Object();
+  var letters ={};
   for (var i=0; i<pass.length; i++) {
       letters[pass[i]] = (letters[pass[i]] || 0) + 1;
       score += 5.0 / letters[pass[i]];

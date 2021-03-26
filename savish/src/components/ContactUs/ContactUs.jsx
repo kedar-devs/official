@@ -19,8 +19,8 @@ const ContactUs = () => {
         <div className={styles.getintouch}>
           <h2>Want to organize an event? Contact us</h2>
           <a 
-          href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=savishkargec@gmail.com" 
-          target="_blank">
+          href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=Gecsavishkar@gmail.com" 
+          target="_blank" rel="noopener noreferrer" >
           <button>
             Over
             <img src={gmail} alt="Youtube icon" />
